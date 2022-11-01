@@ -31,7 +31,6 @@ class EmailUserUnapprovalListNotification extends Notification
      */
     public function via($notifiable)
     {
-        // dd('hello');
         return ['mail', 'database'];
     }
 
@@ -50,7 +49,6 @@ class EmailUserUnapprovalListNotification extends Notification
             ->subject('List of unapproved users')
             ->line('Admin')
             ->line('Please find attach the list of unapproved users')
-            //->action($this->mailData['offerText'])
             ->line('Thanks')
             ->attach(public_path('export/' . $fileName), [
                 'as' => $fileName,
@@ -65,9 +63,9 @@ class EmailUserUnapprovalListNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        // return [
-        //         //
-        //     ];
+        return [
+            //
+        ];
     }
     public function createCsvFile($user)
     {

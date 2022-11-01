@@ -10,7 +10,7 @@ use App\Models\User;
 
 class NotificationController extends Controller
 {
-    public function approval_notification($id)
+    public function approvalNotification($id)
     {
         try {
             $user = User::find($id);
@@ -26,7 +26,7 @@ class NotificationController extends Controller
             return ApiResponseController::responseServerError($e->getMessage());
         }
     }
-    public function assign_teacher_notification(Request $req)
+    public function assignTeacherNotification(Request $req)
     {
         try {
             $student = User::where('id', $req->student_id)->where('user_type', 'Student')->get();

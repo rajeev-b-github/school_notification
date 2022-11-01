@@ -20,5 +20,5 @@ use App\Http\Controllers\NotificationController;
 // });
 
 //Students
-Route::post('approval_notification/{user_id}', [NotificationController::class, 'approval_notification']);
-Route::post('assign_teacher_notification', [NotificationController::class, 'assign_teacher_notification']);
+Route::post('approval_notification/{user_id}', [NotificationController::class, 'approvalNotification']);
+Route::post('assign_teacher_notification', [NotificationController::class, 'assignTeacherNotification']);

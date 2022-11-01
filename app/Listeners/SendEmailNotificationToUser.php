@@ -36,9 +36,6 @@ class SendEmailNotificationToUser
                 'thanks' => 'Thank you',
             ];
 
-            // Notification::route('mail', $event->user->email)->notify(
-            //     new UserApprovalNotification($mailData)
-            // );
             Notification::send($event->user, new UserApprovalNotification($mailData));
         } catch (\Exception $e) {
             return response()->json([
